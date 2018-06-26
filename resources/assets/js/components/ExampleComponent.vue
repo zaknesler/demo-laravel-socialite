@@ -1,14 +1,10 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card card-default">
-                    <div class="card-header">Example Component</div>
+    <div class="w-full">
+        <div class="border rounded">
+            <div class="border-b bg-grey-lightest rounded-t text-grey-darker font-semibold px-4 py-3">{{ title || 'Example Component' }}</div>
 
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
-                </div>
+            <div class="bg-white rounded-b p-4">
+                <slot>I'm an example component!</slot>
             </div>
         </div>
     </div>
@@ -16,6 +12,8 @@
 
 <script>
     export default {
+        props: ['title'],
+
         mounted() {
             console.log('Component mounted.')
         }
