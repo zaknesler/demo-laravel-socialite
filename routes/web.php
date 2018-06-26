@@ -30,5 +30,5 @@ Route::redirect('/settings', '/settings/account');
 Route::get('/settings/account', 'Settings\AccountSettingsController@index')->name('settings.account');
 Route::post('/settings/account', 'Settings\AccountSettingsController@update')->name('settings.account.update');
 
-Route::get('/settings/privacy', 'Settings\privacySettingsController@index')->name('settings.privacy');
-Route::post('/settings/privacy', 'Settings\privacySettingsController@update')->name('settings.privacy.update');
+Route::get('/settings/social', 'Settings\SocialSettingsController@index')->name('settings.social');
+Route::post('/settings/social', 'Settings\SocialSettingsController@update')->name('settings.social.update');

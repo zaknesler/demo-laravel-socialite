@@ -4338,52 +4338,6 @@
                 "validate"
             ],
             "time": "2018-01-29T19:49:41+00:00"
-        },
-        {
-            "name": "zaknesler/tailwind-preset",
-            "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "../tailwind-preset",
-                "reference": "d6cca955172c1b869bcbd76246844fae1fc20fba",
-                "shasum": null
-            },
-            "require": {
-                "laravel/framework": "^5.5"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "ZakNesler\\TailwindPreset\\TailwindServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "ZakNesler\\TailwindPreset\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Zak Nesler",
-                    "email": "contact@zaknesler.com"
-                }
-            ],
-            "description": "A Tailwind CSS preset for Laravel.",
-            "keywords": [
-                "laravel",
-                "laravel preset",
-                "preset",
-                "tailwind",
-                "tailwindcss"
-            ],
-            "transport-options": {
-                "symlink": true
-            }
         }
     ],
     "aliases": [],

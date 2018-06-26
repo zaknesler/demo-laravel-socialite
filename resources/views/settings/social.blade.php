@@ -1,9 +1,9 @@
 @extends('settings/layouts/master')
 
-@section('title', 'Privacy settings')
+@section('title', 'Social settings')
 
 @section('settings.content')
-    <form class="w-full" action="{{ route('settings.privacy.update') }}" method="POST">
+    <form class="w-full" action="{{ route('settings.social.update') }}" method="POST">
         @csrf
 
         <div class="block mb-6">
@@ -39,7 +39,7 @@
         </div>
 
         <div class="block">
-            <input class="inline-block appearance-none border-0 bg-blue hover:bg-blue-dark text-white rounded cursor-pointer py-3 px-6" type="submit" value="Update Privacy Settings" />
+            <input class="inline-block appearance-none border-0 bg-blue hover:bg-blue-dark text-white rounded cursor-pointer py-3 px-6" type="submit" value="Update Social Settings" />
         </div>
     </form>
 @endsection

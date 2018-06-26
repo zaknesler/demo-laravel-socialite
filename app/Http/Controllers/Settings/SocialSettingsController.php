@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Settings;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class PrivacySettingsController extends Controller
+class SocialSettingsController extends Controller
 {
     public function __construct()
     {
@@ -14,12 +14,12 @@ class PrivacySettingsController extends Controller
 
     public function index()
     {
-        return view('settings.privacy')
+        return view('settings.social')
             ->withUser(request()->user());
     }
 
     public function update(Request $request)
     {
-        return redirect()->route('settings.privacy');
+        return redirect()->route('settings.social');
     }
 }
