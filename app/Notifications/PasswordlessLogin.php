@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class GitHubAccountLinked extends Notification
+class PasswordlessLogin extends Notification
 {
     use Queueable;
 
@@ -44,8 +44,11 @@ class GitHubAccountLinked extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject('Your account has been linked with GitHub')
-                    ->line('We just wanted to inform you that your account has been linked up with a GitHub account.');
+                    ->subject('Sign in to your account')
+                    ->greeting('Hello, ' . $this->user->getDisplayName() . '!')
+                    ->line('Please click the button below to finish signing in.')
+                    ->action('Sign In', $this->user->getPasswordlessAuthenticationUrl())
+                    ->salutation(null);
     }
 
     /**

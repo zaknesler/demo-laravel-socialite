@@ -33,6 +33,16 @@ class User extends Authenticatable
     ];
 
     /**
+     * Get signed url to authenticate user.
+     *
+     * @return string
+     */
+    public function getPasswordlessAuthenticationUrl()
+    {
+        return URL::temporarySignedRoute('auth.login.passwordless.authenticate', now()->addMinutes(60), $this);
+    }
+
+    /**
      * Fetch the user's avatar.
      *
      * @param  integer $size

@@ -18,6 +18,11 @@ Route::get('/', function () {
 Route::redirect('/login', '/auth/login')->name('login');
 Route::get('/auth/login', 'Auth\SocialLoginController@index')->name('auth.login');
 
+Route::get('/auth/login/passwordless', 'Auth\PasswordlessLoginController@index')->name('auth.login.passwordless');
+Route::post('/auth/login/passwordless', 'Auth\PasswordlessLoginController@sendLoginEmail')->name('auth.login.passwordless.send');
+
+Route::get('/auth/login/passwordless/{user}', 'Auth\PasswordlessLoginController@authenticate')->name('auth.login.passwordless.authenticate');
+
 Route::get('/auth/{provider}', 'Auth\SocialLoginController@redirectToProvider')->name('auth.social.redirect');
 Route::get('/auth/{provider}/callback', 'Auth\SocialLoginController@handleProviderCallback')->name('auth.social.callback');
 

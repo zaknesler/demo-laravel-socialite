@@ -15,11 +15,6 @@ class SocialSettingsController extends Controller
     public function index()
     {
         return view('settings.social')
-            ->withUser(request()->user());
-    }
-
-    public function update(Request $request)
-    {
-        return redirect()->route('settings.social');
+            ->withUser(request()->user()->load('socialAccounts'));
     }
 }
