@@ -13,10 +13,12 @@ return [
         'providers' => [
             'github' => [
                 'name' => 'GitHub',
+                'manage_url' => 'https://github.com/settings/connections/applications/' . env('GITHUB_CLIENT_ID'),
             ],
 
             'twitter' => [
                 'name' => 'Twitter',
+                'manage_url' => 'https://twitter.com/settings/applications',
             ],
         ],
     ],

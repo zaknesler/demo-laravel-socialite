@@ -1,8 +1,6 @@
-<ul class="list-reset -mb-3">
-    {{-- <li><a class="{{ Route::currentRouteIs('settings.account', 'font-semibold text-blue ') }}text-grey-darker no-underline hover:underline" href="{{ route('settings.account') }}">Account</a></li> --}}
+<ul class="bg-grey-lightest shadow rounded overflow-hidden list-reset">
+    <li><a class="{{ Route::currentRouteIs('settings.account', 'bg-blue text-white ') }} block font-semibold text-grey-darker no-underline hover:underline px-6 py-4" href="{{ route('settings.account') }}">Account</a></li>
+    <li><a class="{{ Route::currentRouteIs('settings.social', 'bg-blue text-white ') }} block font-semibold text-grey-darker no-underline hover:underline px-6 py-4" href="{{ route('settings.social') }}">Social</a></li>
 
-    <li><a class="block {{ Route::currentRouteIs('settings.account', 'border-blue text-blue bg-grey-lightest ') }} block border-l-4 border-white px-6 py-3 font-semibold text-grey-darker no-underline hover:underline" href="{{ route('settings.account') }}">Account</a></li>
-    <li><a class="block {{ Route::currentRouteIs('settings.social', 'border-blue text-blue bg-grey-lightest ') }} block border-l-4 border-white px-6 py-3 font-semibold text-grey-darker no-underline hover:underline" href="{{ route('settings.social') }}">Social</a></li>
-
-    <li><a class="block border-l-4 border-white px-6 py-3 font-semibold text-grey-darker no-underline hover:underline" href="#" @click.prevent="logout">Logout</a></li>
+    <li><a class="block font-semibold text-grey-darker no-underline hover:underline px-6 py-4" href="#" @click.prevent="logout">Logout</a></li>
 </ul>
