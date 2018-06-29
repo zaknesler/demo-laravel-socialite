@@ -3,7 +3,7 @@
 @section('title', 'Account settings')
 
 @section('settings.content')
-    <form class="w-full" action="{{ route('settings.account.update') }}" method="POST">
+    <form class="max-w-xs" action="{{ route('settings.account.update') }}" method="POST">
         @csrf
 
         <div class="block mb-6">
@@ -39,7 +39,7 @@
         </div>
 
         <div class="block">
-            <input class="inline-block appearance-none border-0 bg-blue hover:bg-blue-dark text-white rounded cursor-pointer py-3 px-6" type="submit" value="Update Account Settings" />
+            <input class="inline-block appearance-none border-0 bg-blue hover:bg-blue-dark text-white rounded cursor-pointer py-3 px-4" type="submit" value="Update" />
         </div>
     </form>
 @endsection
