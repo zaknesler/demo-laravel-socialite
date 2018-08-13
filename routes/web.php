@@ -36,4 +36,5 @@ Route::get('/settings/account', 'Settings\AccountSettingsController@index')->nam
 Route::post('/settings/account', 'Settings\AccountSettingsController@update')->name('settings.account.update');
 
 Route::get('/settings/social', 'Settings\SocialSettingsController@index')->name('settings.social');
-Route::post('/settings/social', 'Settings\SocialSettingsController@update')->name('settings.social.update');
+
+Route::get('/settings/api', 'Settings\ApiSettingsController@index')->name('settings.api');

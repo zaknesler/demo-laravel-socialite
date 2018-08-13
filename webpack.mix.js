@@ -1,7 +1,7 @@
-let mix = require('laravel-mix');
-let tailwind = require('tailwindcss');
+let mix = require('laravel-mix')
+let tailwind = require('tailwindcss')
 
-require('laravel-mix-purgecss');
+require('laravel-mix-purgecss')
 
 mix.setPublicPath('public')
   .less('resources/assets/less/app.less', 'public/css')
@@ -10,8 +10,8 @@ mix.setPublicPath('public')
     postCss: [
       tailwind('./tailwind.js'),
     ]
-  });
+  })
 
 if (mix.inProduction()) {
-  mix.purgeCss().version();
+  mix.purgeCss().version()
 }

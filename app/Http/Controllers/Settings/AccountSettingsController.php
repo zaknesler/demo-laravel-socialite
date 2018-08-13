@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Settings;
 
 use App\Rules\AlphaSpace;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -16,7 +17,7 @@ class AccountSettingsController extends Controller
     public function index()
     {
         return view('settings.account')
-            ->withUser(request()->user());
+            ->with('user', request()->user());
     }
 
     public function update(Request $request)

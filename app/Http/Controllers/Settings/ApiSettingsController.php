@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Settings;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class SocialSettingsController extends Controller
+class ApiSettingsController extends Controller
 {
     public function __construct()
     {
@@ -14,7 +14,6 @@ class SocialSettingsController extends Controller
 
     public function index()
     {
-        return view('settings.social')
-            ->with('user', request()->user()->load('socialAccounts'));
+        return view('settings.api');
     }
 }
