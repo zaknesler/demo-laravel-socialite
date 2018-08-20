@@ -60,17 +60,17 @@
 
                                 <div class="flex items-baseline text-sm">
                                     <div class="font-semibold w-16 text-right flex-no-shrink">Client ID</div>
-                                    <div v-text="client.id" class="break-words ml-2 font-mono text-grey-dark"></div>
+                                    <div v-text="client.id" class="ml-2 font-mono text-grey-dark"></div>
                                 </div>
 
                                 <div class="flex items-baseline text-sm">
                                     <div class="font-semibold w-16 text-right flex-no-shrink">Redirect</div>
-                                    <div v-text="client.redirect" class="break-words ml-2 font-mono text-grey-dark"></div>
+                                    <div v-text="client.redirect" class="ml-2 font-mono text-grey-dark"></div>
                                 </div>
 
-                                <div class="flex items-baseline text-sm">
+                                <div class="flex items-baseline text-sm break-words">
                                     <div class="font-semibold w-16 text-right flex-no-shrink">Secret</div>
-                                    <div class="break-words ml-2 font-mono text-grey-dark">
+                                    <div class="w-auto ml-2 font-mono text-grey-dark">
                                         <passport-secret :text="client.secret"></passport-secret>
                                     </div>
                                 </div>
