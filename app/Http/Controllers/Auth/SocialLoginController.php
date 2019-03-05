@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Zttp\Zttp;
 use App\Http\Controllers\Controller;
 use Laravel\Socialite\Facades\Socialite;
 use App\Notifications\GitHubAccountLinked;
@@ -16,10 +17,9 @@ class SocialLoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('social')->only('redirectToProvider', 'handleProviderCallback');
+        $this->middleware('social')->only('redirectToProvider', 'handleProviderCallback', 'removeProvider');
 
         $this->middleware('auth')->only('logout');
-        $this->middleware('guest')->except('logout');
     }
 
     /**
@@ -35,6 +35,7 @@ class SocialLoginController extends Controller
     /**
      * Redirect the user to the GitHub authentication page.
      *
+     * @param string $provider
      * @return \Illuminate\Http\RedirectResponse
      */
     public function redirectToProvider($provider)
@@ -45,6 +46,7 @@ class SocialLoginController extends Controller
     /**
      * Obtain the user information from GitHub.
      *
+     * @param string $provider
      * @return \Illuminate\Http\RedirectResponse
      */
     public function handleProviderCallback($provider)
@@ -75,9 +77,32 @@ class SocialLoginController extends Controller
     }
 
     /**
+     * Remove a provider from the user's account and redirect to the provider's manage url.
+     *
+     * @param  string $provider
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function removeProvider($provider)
+    {
+        request()->user()->socialAccounts()
+            ->whereProvider($provider)
+            ->delete();
+
+        return response()->json([
+            'redirect' => config("auth.social.providers.$provider.manage_url"),
+        ]);
+    }
+
+    protected function revokeGitHub()
+    {
+        // Zttp::delete("https://github.com/api/v3/applications");
+    }
+
+    /**
      * Fetch existing user.
      *
      * @param  \Laravel\Socialite\Two\User $providerUser
+     * @param  string $provider
      * @return App\User
      */
     protected function fetchExistingUser($providerUser, $provider)
@@ -90,12 +115,14 @@ class SocialLoginController extends Controller
     /**
      * Log the user out of the application.
      *
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\JsonResponse
      */
     public function logout()
     {
         auth()->logout();
 
-        return redirect('/');
+        return response()->json([
+            'redirect' => route('index'),
+        ]);
     }
 }

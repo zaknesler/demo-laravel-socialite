@@ -12,8 +12,11 @@ const app = new Vue({
     },
 
     methods: {
-        logout() {
-            this.$refs.logoutForm.submit();
+        post(url) {
+            axios.post(url)
+                .then(({ data }) => {
+                    window.location.replace(data.redirect ? data.redirect : '/');
+                })
         }
     }
 });

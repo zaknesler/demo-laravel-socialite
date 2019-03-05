@@ -24,8 +24,6 @@
             @hasSection('content')
                 @include('layouts/partials/_content')
             @endif
-
-            <form ref="logoutForm" class="hidden" action="{{ route('auth.logout') }}" method="POST">@csrf</form>
         </div>
     </body>
 </html>

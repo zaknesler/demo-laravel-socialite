@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
 
 Route::redirect('/login', '/auth/login')->name('login');
 Route::get('/auth/login', 'Auth\SocialLoginController@index')->name('auth.login');
@@ -25,6 +25,8 @@ Route::get('/auth/login/passwordless/{user}', 'Auth\PasswordlessLoginController@
 
 Route::get('/auth/{provider}', 'Auth\SocialLoginController@redirectToProvider')->name('auth.social.redirect');
 Route::get('/auth/{provider}/callback', 'Auth\SocialLoginController@handleProviderCallback')->name('auth.social.callback');
+
+Route::post('/auth/{provider}/remove', 'Auth\SocialLoginController@removeProvider')->name('auth.social.remove');
 
 Route::post('/auth/logout', 'Auth\SocialLoginController@logout')->name('auth.logout');
 
