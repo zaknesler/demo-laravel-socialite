@@ -3,13 +3,14 @@
 namespace App;
 
 use App\UserSocialAccount;
+use Laravel\Passport\HasApiTokens;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use HasApiTokens, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -39,7 +40,7 @@ class User extends Authenticatable
      */
     public function getPasswordlessAuthenticationUrl()
     {
-        return URL::temporarySignedRoute('auth.login.passwordless.authenticate', now()->addMinutes(60), $this);
+        return URL::temporarySignedRoute('auth.login.passwordless.authenticate', now()->addMInutes(60), $this);
     }
 
     /**

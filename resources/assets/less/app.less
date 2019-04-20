@@ -72,3 +72,11 @@ body {
 [v-cloak] {
     @apply .hidden;
 }
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 150ms ease-in-out;
+}
+
+.fade-enter, .fade-leave-to {
+    @apply .opacity-0;
+}

@@ -7094,6 +7094,10 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
+tailwindcss-tables@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/tailwindcss-tables/-/tailwindcss-tables-0.2.0.tgz#41c2e1bb5d8a5f487d91ce48ad44a48bf2c1097c"
+
 tailwindcss@^0.6:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-0.6.1.tgz#6fa250df581a044b3240a5b40e7beb281d56b41e"
@@ -7622,6 +7626,10 @@ vue-loader@^13.7.1:
     vue-hot-reload-api "^2.2.0"
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.6.0"
+
+vue-slide-up-down@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/vue-slide-up-down/-/vue-slide-up-down-1.3.3.tgz#2bd0668eccbdb0963e8b74d32811fb7c21d2f9a7"
 
 vue-style-loader@^3.0.0:
   version "3.1.2"

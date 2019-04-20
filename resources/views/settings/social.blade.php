@@ -1,6 +1,6 @@
 @extends('settings/layouts/master')
 
-@section('title', 'Social login settings')
+@section('title', 'Authentication settings')
 
 @section('settings.content')
     @if (count($user->socialAccounts))
